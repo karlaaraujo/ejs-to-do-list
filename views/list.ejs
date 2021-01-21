@@ -1,0 +1,29 @@
+<!--
+this file is the base template for all of the to-do lists.
+it's inside the 'views' folder which the app will look for when rendering the ejs
+-->
+
+<%- include("header") -%> <!--o EJS permite que códigos de outras files sejam adicionados para evitar repetição. Aqui está sendo incluído o conteúdo da file header.ejs -->
+
+  <div class="box" id="heading">
+    <h1><%= tituloLista %></h1> <!--tituloLista is where the value given by the app.js via ejs will be outputted -->
+  </div>
+
+
+  <div class="box">
+    <% for (i=0; i<novosItensDaLista.length; i++) { %>
+      <div class="item">
+        <input type="checkbox">
+        <p><%= novosItensDaLista[i] %></p>
+      </div>
+    <% } %> <!-- these lines of code add a new <li> that holds novosItensDaLista[i] for as long as i is smaller than the array's length -->
+
+
+  <form class="addItem" action="/" method="post">
+    <input type="text" name="novoItem" placeholder="Novo Item" autocomplete="off">
+    <button type="submit" name="botao" value= <%= tituloLista %> > + </button>
+  </form>
+  </div>
+
+
+<%- include("footer") -%> <!-- incluindo código do footer (q está na footer.ejs) -->

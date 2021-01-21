@@ -1,0 +1,32 @@
+//Topic: Node Module Exports
+
+
+module.exports.getDate = getDate; //module is the actual data.ejs file. This line exports the getDate function when the module is required
+
+function getDate(){
+
+let dataDeHj = new Date(); //Date is a js method that get the user's pc's current date
+
+let opcoes = { //this passes the specifications for the toLocaleDateString method that will be used.
+  weekday :"long",
+  day: "numeric",
+  month:"long"
+};
+
+let hoje = dataDeHj.toLocaleDateString("pt-BR", opcoes);
+return hoje;
+}
+
+module.exports.getDay = getDay;
+
+function getDay(){
+
+  let dataDeHj = new Date(); //Date is a js method that get the user's pc's current date
+
+  let opcoes = { //this passes the specifications for the toLocaleDateString method that will be used.
+    weekday :"long"
+  };
+
+  let hoje = dataDeHj.toLocaleDateString("pt-BR", opcoes);
+  return hoje;
+}

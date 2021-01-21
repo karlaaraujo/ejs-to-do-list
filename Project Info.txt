@@ -1,0 +1,7 @@
+This was for practicing: Templating with EJS
+
+Technologies used:
+
+HTML, CSS and JS
+Node.js
+NPM packages (Express, BodyParser, EJS)
